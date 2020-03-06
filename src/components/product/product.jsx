@@ -19,7 +19,7 @@ class Product extends Component{
             )
     }
     render(){
-        const itemid = localStorage.setItem('id', this.state.product.id);
+        const itemoid = localStorage.setItem('id', this.state.product.itemId);
         return(
             <div className = "container">
                 <div className="col-lg-6 portfolio-item">

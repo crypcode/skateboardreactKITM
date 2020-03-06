@@ -3,15 +3,15 @@ import React, {Component} from "react";
 class Orders extends Component {
     constructor(props) {
         super(props);
+        const itemid = localStorage.getItem('id')
         this.state = {
-            buyerName: '', buyerSurname: '', buyerAddress: '', itemId: '',
+            buyerName: '', buyerSurname: '', buyerAddress: '', itemId: itemid,
             productQuantity: '', orderSum: ''
         };
 
         this.handleName = this.handleName.bind(this);
         this.handleSurname = this.handleSurname.bind(this);
         this.handleAddress = this.handleAddress.bind(this);
-        this.handleitemId = this.handleitemId.bind(this);
         this.handleQuantity = this.handleQuantity.bind(this);
         this.handleOrderSum = this.handleOrderSum.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,9 +29,6 @@ class Orders extends Component {
         this.setState({buyerAddress: event.target.value});
     }
 
-    handleitemId(event) {
-        this.setState({itemId: event.target.value});
-    }
 
     handleQuantity(event) {
         this.setState({productQuantity: event.target.value});
@@ -87,12 +84,6 @@ class Orders extends Component {
                             </div>
                         </div>
 
-                        <div className="row form-group">
-                            <div className="col-md-12">
-                                <label className="text-black" htmlFor="title">Produkto id</label>
-                                <input type="text" id="title" value={this.state.itemId} onChange={this.handleitemId} name="title" className="form-control"/>
-                            </div>
-                        </div>
 
                         <div className="row form-group">
                             <div className="col-md-12">
@@ -111,7 +102,7 @@ class Orders extends Component {
 
                         <div className="row form-group">
                             <div className="col-md-12">
-                                <input type="submit" value="Pridėti" className="btn btn-primary py-2 px-4 text-white"/>
+                                <input type="submit" value="Patvirtinti" className="btn btn-primary py-2 px-4 text-white"/>
                             </div>
                         </div>
 
